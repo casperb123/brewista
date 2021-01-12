@@ -1,21 +1,23 @@
 <template>
-  <li class="border-gray-300 border p-6 flex">
-    <svg class="w-20 h-20">
-      <use :xlink:href="recipeId" />
-    </svg>
-    <div>
-      <brew-title
-        :title="title"
-        :titleUppercase="titleUppercase"
-        :subTitle="subTitle"
-      />
-      <brew-small-details
-        :beanAmount="beanAmount"
-        :waterAmount="waterAmount"
-        :grindType="grindType"
-        :brewTime="brewTime"
-      />
-    </div>
+  <li>
+    <base-card class="flex">
+      <svg class="w-20 h-20">
+        <use :xlink:href="recipeId" />
+      </svg>
+      <div>
+        <brew-title
+          :title="title"
+          :titleUppercase="titleUppercase"
+          :subTitle="subTitle"
+        />
+        <brew-small-details
+          :beanAmount="beanAmount"
+          :waterAmount="waterAmount"
+          :grindType="grindType"
+          :brewTime="brewTime"
+        />
+      </div>
+    </base-card>
   </li>
 </template>
 

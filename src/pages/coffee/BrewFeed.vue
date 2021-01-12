@@ -17,7 +17,7 @@
       />
     </ul>
     <router-link
-      to="/feed"
+      to="/coffee"
       class="rounded-full uppercase font-bold bg-yellow-200 px-14 py-6 self-center mt-10 hover:bg-yellow-300 transition-colors"
     >
       Brew a cup
