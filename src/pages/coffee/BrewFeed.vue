@@ -1,7 +1,10 @@
 <template>
   <div class="flex flex-col">
     <h2 class="uppercase text-gray-400 mb-4">Latest Brews</h2>
-    <ul class="flex flex-wrap gap-5">
+    <p v-if="!hasBrews" class="text-2xl text-center">
+      Start brewing a cup by clicking the button below
+    </p>
+    <ul v-else class="flex flex-wrap gap-5">
       <brew-item
         v-for="brew in latestBrews"
         :key="brew"
@@ -12,7 +15,7 @@
         :waterAmount="brew.waterAmount"
         :grindSize="brew.grindSize"
         :brewTime="brew.brewTime"
-        class="flex-1"
+        class="flex-auto"
       />
     </ul>
     <router-link
@@ -31,9 +34,15 @@ export default {
   components: {
     BrewItem,
   },
+  created() {
+    this.$store.dispatch("coffee/loadCoffeeBrews");
+  },
   computed: {
     latestBrews() {
       return this.$store.getters["coffee/latestBrews"];
+    },
+    hasBrews() {
+      return this.$store.getters["coffee/hasBrews"];
     },
   },
 };

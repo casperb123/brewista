@@ -20,7 +20,8 @@
       </li>
     </ul>
     <button
-      class="flex items-center font-bold uppercase rounded-full bg-yellow-200 px-14 py-6 self-center mt-10 gap-3 hover:bg-yellow-300 transition-colors"
+      class="flex items-center font-bold uppercase rounded-full bg-yellow-200 px-14 py-6 mt-10 gap-3 hover:bg-yellow-300 transition-colors"
+      @click="saveCoffeeBrew"
     >
       Finish
       <svg class="w-4 h-4">
@@ -42,6 +43,13 @@ export default {
       required: true,
     },
   },
+  created() {
+    const recipes = this.$store.getters["coffee/recipes"];
+    const coffees = this.$store.getters["coffee/coffee"];
+
+    this.recipe = recipes.find((r) => r.id === this.recipeId);
+    this.coffee = coffees.find((c) => c.id === this.coffeeId);
+  },
   data() {
     return {
       recipe: null,
@@ -53,12 +61,21 @@ export default {
       return `/recipes/${this.recipeId}`;
     },
   },
-  created() {
-    const recipes = this.$store.getters["coffee/recipes"];
-    const coffees = this.$store.getters["coffee/coffee"];
+  methods: {
+    saveCoffeeBrew() {
+      const coffeeBrewData = {
+        recipeId: this.recipe.recipeId,
+        title: this.coffee.title,
+        subTitle: this.coffee.subTitle,
+        beanAmount: this.recipe.beanAmount,
+        waterAmount: this.recipe.waterAmount,
+        grindSize: this.recipe.grindSize,
+        brewTime: this.recipe.brewTime,
+      };
 
-    this.recipe = recipes.find((r) => r.id === this.recipeId);
-    this.coffee = coffees.find((c) => c.id === this.coffeeId);
+      this.$store.dispatch("coffee/addCoffeeBrew", coffeeBrewData);
+      this.$router.replace("/feed");
+    },
   },
 };
 </script>

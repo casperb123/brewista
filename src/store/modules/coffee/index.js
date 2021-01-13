@@ -139,18 +139,7 @@ export default {
           ],
         },
       ],
-      latestBrews: [
-        {
-          id: "c1",
-          recipeId: "#infusion",
-          title: "Beza",
-          subTitle: "Impact Roasters",
-          beanAmount: "40g",
-          waterAmount: "500ml",
-          grindSize: "Coarse",
-          brewTime: "12 timer",
-        },
-      ],
+      latestBrews: [],
     };
   },
   actions,

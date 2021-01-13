@@ -1,6 +1,6 @@
 <template>
   <li>
-    <base-card class="flex items-center">
+    <base-card class="flex items-center gap-x-4">
       <svg class="w-16 h-16">
         <use :xlink:href="recipeId" />
       </svg>

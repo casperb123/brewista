@@ -36,6 +36,6 @@ export default {
 
 <style scoped>
 li {
-  min-width: 350px;
+  min-width: 330px;
 }
 </style>
