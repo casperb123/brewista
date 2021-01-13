@@ -1,12 +1,14 @@
 <template>
-  <section class="flex gap-x-5 items-center mb-5">
+  <nav class="flex gap-x-5 items-center mb-5">
     <router-link :to="to">
       <svg class="w-6 h-6">
         <use xlink:href="#arrowBack" />
       </svg>
     </router-link>
-    <h2 class="text-lg">{{ title }}</h2>
-  </section>
+    <slot>
+      <h2 class="text-lg">{{ title }}</h2>
+    </slot>
+  </nav>
 </template>
 
 <script>
@@ -14,7 +16,7 @@ export default {
   props: {
     title: {
       type: String,
-      required: true,
+      required: false,
     },
     to: {
       type: String,

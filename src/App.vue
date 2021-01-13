@@ -321,7 +321,7 @@
     </symbol>
   </svg>
 
-  <div class="container mx-auto mt-4">
+  <div class="container mx-auto p-4">
     <the-header />
     <router-view v-slot="slotProps">
       <transition name="route" mode="out-in">

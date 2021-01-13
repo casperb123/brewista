@@ -79,7 +79,7 @@ export default {
       return this.varieties.join(", ");
     },
     recipeLink() {
-      return `/recipe/${this.id}`;
+      return `/recipes/${this.id}`;
     },
   },
 };

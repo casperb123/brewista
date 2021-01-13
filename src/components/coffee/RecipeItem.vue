@@ -1,6 +1,6 @@
 <template>
   <li>
-    <router-link to="/feed">
+    <router-link :to="recipeLink">
       <base-card
         class="flex gap-x-4 h-full hover:bg-gray-100 transition-colors"
       >
@@ -59,6 +59,11 @@ export default {
     steps: {
       type: Array,
       required: true,
+    },
+  },
+  computed: {
+    recipeLink() {
+      return `/recipe/${this.coffeeId}/${this.id}`;
     },
   },
 };
