@@ -5,4 +5,7 @@ export default {
   setCoffeeBrews(state, payload) {
     state.latestBrews = payload;
   },
+  setFetchTimestamp(state) {
+    state.lastFetch = new Date().getTime();
+  },
 };

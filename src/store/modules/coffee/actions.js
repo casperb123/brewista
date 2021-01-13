@@ -1,13 +1,8 @@
 export default {
   async addCoffeeBrew(context, data) {
     const brewData = {
+      coffeeId: data.coffeeId,
       recipeId: data.recipeId,
-      title: data.title,
-      subTitle: data.subTitle,
-      beanAmount: data.beanAmount,
-      waterAmount: data.waterAmount,
-      grindSize: data.grindSize,
-      brewTime: data.brewTime,
     };
 
     const response = await fetch(
@@ -28,7 +23,12 @@ export default {
       id: responseData.name,
     });
   },
-  async loadCoffeeBrews(context) {
+  async loadCoffeeBrews(context, payload) {
+    if (!payload.forceRefresh && !context.getters.shouldUpdate) {
+      return;
+    }
+
+    console.log("LOADING");
     const response = await fetch(
       "https://brewista-107dd-default-rtdb.firebaseio.com/brews.json"
     );
@@ -45,17 +45,24 @@ export default {
     for (const key in responseData) {
       const coffeeBrew = {
         id: key,
+        coffeeId: responseData[key].coffeeId,
         recipeId: responseData[key].recipeId,
-        title: responseData[key].title,
-        subTitle: responseData[key].subTitle,
-        beanAmount: responseData[key].beanAmount,
-        waterAmount: responseData[key].waterAmount,
-        grindSize: responseData[key].grindSize,
-        brewTime: responseData[key].brewTime,
       };
+
+      // const coffeeBrew = {
+      //   id: key,
+      //   recipeId: responseData[key].recipeId,
+      //   title: responseData[key].title,
+      //   subTitle: responseData[key].subTitle,
+      //   beanAmount: responseData[key].beanAmount,
+      //   waterAmount: responseData[key].waterAmount,
+      //   grindSize: responseData[key].grindSize,
+      //   brewTime: responseData[key].brewTime,
+      // };
       coffeeBrews.push(coffeeBrew);
     }
 
     context.commit("setCoffeeBrews", coffeeBrews);
+    context.commit("setFetchTimestamp");
   },
 };

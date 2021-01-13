@@ -19,15 +19,12 @@
         <p>{{ step }}</p>
       </li>
     </ul>
-    <button
-      class="flex items-center font-bold uppercase rounded-full bg-yellow-200 px-14 py-6 mt-10 gap-3 hover:bg-yellow-300 transition-colors"
-      @click="saveCoffeeBrew"
-    >
+    <base-button class="flex items-center gap-3 mt-10" @click="saveCoffeeBrew">
       Finish
       <svg class="w-4 h-4">
         <use xlink:href="#arrowForward" />
       </svg>
-    </button>
+    </base-button>
   </section>
 </template>
 
@@ -58,19 +55,14 @@ export default {
   },
   computed: {
     backLink() {
-      return `/recipes/${this.recipeId}`;
+      return `/recipes/${this.coffeeId}`;
     },
   },
   methods: {
     saveCoffeeBrew() {
       const coffeeBrewData = {
-        recipeId: this.recipe.recipeId,
-        title: this.coffee.title,
-        subTitle: this.coffee.subTitle,
-        beanAmount: this.recipe.beanAmount,
-        waterAmount: this.recipe.waterAmount,
-        grindSize: this.recipe.grindSize,
-        brewTime: this.recipe.brewTime,
+        coffeeId: this.coffee.id,
+        recipeId: this.recipe.id,
       };
 
       this.$store.dispatch("coffee/addCoffeeBrew", coffeeBrewData);

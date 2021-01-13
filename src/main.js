@@ -8,6 +8,7 @@ import BaseBackTitle from "./components/ui/BaseBackTitle.vue";
 import BaseCard from "./components/ui/BaseCard.vue";
 import BaseTitle from "./components/ui/BaseTitle.vue";
 import BaseRecipeDetails from "./components/ui/BaseRecipeDetails.vue";
+import BaseButton from "./components/ui/BaseButton.vue";
 
 const app = createApp(App);
 
@@ -18,5 +19,6 @@ app.component("base-back-title", BaseBackTitle);
 app.component("base-card", BaseCard);
 app.component("base-title", BaseTitle);
 app.component("base-recipe-details", BaseRecipeDetails);
+app.component("base-button", BaseButton);
 
 app.mount("#app");

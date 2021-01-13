@@ -11,4 +11,12 @@ export default {
   hasBrews(state) {
     return state.latestBrews && state.latestBrews.length > 0;
   },
+  shouldUpdate(state) {
+    const lastFetch = state.lastFetch;
+    if (!lastFetch) {
+      return true;
+    }
+    const currentTimestamp = new Date().getTime();
+    return (currentTimestamp - lastFetch) / 1000 > 60;
+  },
 };
