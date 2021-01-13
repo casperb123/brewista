@@ -28,7 +28,6 @@ export default {
       return;
     }
 
-    console.log("LOADING");
     const response = await fetch(
       "https://brewista-107dd-default-rtdb.firebaseio.com/brews.json"
     );

@@ -1,10 +1,8 @@
 <template>
   <li>
     <router-link :to="recipeLink">
-      <base-card
-        class="flex flex-col gap-y-5 h-full hover:bg-gray-100 transition-colors"
-      >
-        <brew-title
+      <base-card interactive class="flex flex-col gap-y-5 h-full">
+        <base-title
           :title="title"
           :titleUppercase="true"
           :subTitle="subTitle"
@@ -34,12 +32,7 @@
 </template>
 
 <script>
-import BrewTitle from "./BrewTitle.vue";
-
 export default {
-  components: {
-    BrewTitle,
-  },
   props: {
     id: {
       type: String,

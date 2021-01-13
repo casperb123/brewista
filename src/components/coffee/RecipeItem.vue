@@ -2,6 +2,7 @@
   <li>
     <router-link :to="recipeLink">
       <base-card
+        interactive
         class="flex gap-x-4 h-full hover:bg-gray-100 transition-colors"
       >
         <svg class="w-16 h-16">
