@@ -1,9 +1,9 @@
 <template>
   <section>
-    <back-title title="Pick your coffee" to="/feed" />
+    <base-back-title title="Pick your coffee" to="/feed" />
     <ul class="flex flex-wrap gap-5">
       <coffee-item
-        v-for="coffee in availableCoffee"
+        v-for="coffee in coffee"
         :key="coffee"
         :id="coffee.id"
         :title="coffee.title"
@@ -13,7 +13,7 @@
         :roastProfile="coffee.roastProfile"
         :varieties="coffee.varieties"
         :country="coffee.country"
-        class="item flex-1"
+        class="flex-1"
       />
     </ul>
   </section>
@@ -27,15 +27,15 @@ export default {
     CoffeeItem,
   },
   computed: {
-    availableCoffee() {
-      return this.$store.getters["coffee/availableCoffee"];
+    coffee() {
+      return this.$store.getters["coffee/coffee"];
     },
   },
 };
 </script>
 
 <style scoped>
-.item {
+li {
   min-width: 350px;
 }
 </style>

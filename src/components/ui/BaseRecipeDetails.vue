@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-wrap gap-3">
+  <section class="flex flex-wrap gap-x-3 gap-y-2">
     <div class="box">
       <svg class="smallIcon">
         <use xlink:href="#bean" />
@@ -16,7 +16,7 @@
       <svg class="smallIcon">
         <use xlink:href="#grind" />
       </svg>
-      <p>{{ grindType }}</p>
+      <p>{{ grindSize }}</p>
     </div>
     <div class="box">
       <svg class="smallIcon">
@@ -38,7 +38,7 @@ export default {
       type: String,
       required: true,
     },
-    grindType: {
+    grindSize: {
       type: String,
       required: true,
     },

@@ -5,13 +5,12 @@
       <brew-item
         v-for="brew in latestBrews"
         :key="brew"
-        :recipe="brew.recipe"
+        :recipeId="brew.recipeId"
         :title="brew.title"
-        :titleUppercase="true"
         :subTitle="brew.subTitle"
         :beanAmount="brew.beanAmount"
         :waterAmount="brew.waterAmount"
-        :grindType="brew.grindType"
+        :grindSize="brew.grindSize"
         :brewTime="brew.brewTime"
         class="flex-1"
       />

@@ -1,7 +1,9 @@
 <template>
   <li>
-    <router-link to="/feed">
-      <base-card class="flex flex-col gap-y-5 h-full">
+    <router-link :to="recipeLink">
+      <base-card
+        class="flex flex-col gap-y-5 h-full hover:bg-gray-100 transition-colors"
+      >
         <brew-title
           :title="title"
           :titleUppercase="true"
@@ -75,6 +77,9 @@ export default {
   computed: {
     varietiesString() {
       return this.varieties.join(", ");
+    },
+    recipeLink() {
+      return `/recipe/${this.id}`;
     },
   },
 };

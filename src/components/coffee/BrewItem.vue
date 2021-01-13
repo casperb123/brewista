@@ -1,19 +1,19 @@
 <template>
   <li>
-    <base-card class="flex">
-      <svg class="w-20 h-20">
+    <base-card class="flex items-center">
+      <svg class="w-16 h-16">
         <use :xlink:href="recipeId" />
       </svg>
       <div>
-        <brew-title
+        <base-title
           :title="title"
-          :titleUppercase="titleUppercase"
+          :titleUppercase="true"
           :subTitle="subTitle"
         />
-        <brew-small-details
+        <base-recipe-details
           :beanAmount="beanAmount"
           :waterAmount="waterAmount"
-          :grindType="grindType"
+          :grindSize="grindSize"
           :brewTime="brewTime"
         />
       </div>
@@ -22,27 +22,15 @@
 </template>
 
 <script>
-import BrewTitle from "./BrewTitle.vue";
-import BrewSmallDetails from "./BrewSmallDetails.vue";
-
 export default {
-  components: {
-    BrewTitle,
-    BrewSmallDetails,
-  },
   props: {
-    recipe: {
+    recipeId: {
       type: String,
       required: true,
     },
     title: {
       type: String,
       required: true,
-    },
-    titleUppercase: {
-      type: Boolean,
-      required: false,
-      default: false,
     },
     subTitle: {
       type: String,
@@ -57,18 +45,13 @@ export default {
       type: String,
       required: true,
     },
-    grindType: {
+    grindSize: {
       type: String,
       required: true,
     },
     brewTime: {
       type: String,
       required: true,
-    },
-  },
-  computed: {
-    recipeId() {
-      return `#${this.recipe}`;
     },
   },
 };
