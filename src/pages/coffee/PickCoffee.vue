@@ -13,7 +13,7 @@
         :roastProfile="coffee.roastProfile"
         :varieties="coffee.varieties"
         :country="coffee.country"
-        class="flex-1"
+        class="item flex-1"
       />
     </ul>
   </section>
@@ -33,3 +33,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.item {
+  min-width: 350px;
+}
+</style>

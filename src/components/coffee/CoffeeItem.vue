@@ -1,12 +1,31 @@
 <template>
   <li>
     <router-link to="/feed">
-      <base-card class="flex flex-col">
+      <base-card class="flex flex-col gap-y-5 h-full">
         <brew-title
           :title="title"
           :titleUppercase="true"
           :subTitle="subTitle"
         />
+        <p>{{ description }}</p>
+        <section class="grid grid-cols-2 gap-5">
+          <div>
+            <p class="detailTitle">Process</p>
+            <p>{{ process }}</p>
+          </div>
+          <div>
+            <p class="detailTitle">Roast Profile</p>
+            <p>{{ roastProfile }}</p>
+          </div>
+          <div>
+            <p class="detailTitle">Varieties</p>
+            <p>{{ varietiesString }}</p>
+          </div>
+          <div>
+            <p class="detailTitle">Country</p>
+            <p>{{ country }}</p>
+          </div>
+        </section>
       </base-card>
     </router-link>
   </li>
@@ -21,7 +40,7 @@ export default {
   },
   props: {
     id: {
-      type: Number,
+      type: String,
       required: true,
     },
     title: {
@@ -53,5 +72,16 @@ export default {
       required: true,
     },
   },
+  computed: {
+    varietiesString() {
+      return this.varieties.join(", ");
+    },
+  },
 };
 </script>
+
+<style scoped>
+.detailTitle {
+  @apply text-gray-400 uppercase;
+}
+</style>

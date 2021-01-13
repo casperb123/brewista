@@ -19,7 +19,7 @@ export default {
           country: "Guatemala",
         },
         {
-          id: 2,
+          id: "2",
           title: "Beza",
           subTitle: "Impact Roasters",
           description:
@@ -30,7 +30,7 @@ export default {
           country: "Ethiopia",
         },
         {
-          id: 3,
+          id: "3",
           title: "Vista Hermosa",
           subTitle: "Coffee Collective",
           description:
@@ -41,7 +41,7 @@ export default {
           country: "Guatemala",
         },
         {
-          id: 4,
+          id: "4",
           title: "Takesi Geisha",
           subTitle: "Coffee Collective",
           description:

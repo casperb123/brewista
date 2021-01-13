@@ -1,8 +1,10 @@
 <template>
-  <h3 class="font-bold text-lg" :class="{ titleUppercase: titleUppercase }">
-    {{ title }}
-  </h3>
-  <p v-if="!!subTitle" class="text-gray-400">{{ subTitle }}</p>
+  <div>
+    <h3 class="font-bold text-lg" :class="{ titleUppercase: titleUppercase }">
+      {{ title }}
+    </h3>
+    <p v-if="!!subTitle" class="text-gray-400">{{ subTitle }}</p>
+  </div>
 </template>
 
 <script>

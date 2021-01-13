@@ -1,5 +1,5 @@
 <template>
-  <section class="flex gap-x-3">
+  <section class="flex flex-wrap gap-3">
     <div class="box">
       <svg class="smallIcon">
         <use xlink:href="#bean" />
