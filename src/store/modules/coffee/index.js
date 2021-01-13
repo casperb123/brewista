@@ -56,6 +56,7 @@ export default {
       availableRecipes: [
         {
           id: "1",
+          favorite: true,
           recipeId: "#aeropress",
           title: "AeroPress",
           beanAmount: "16g",
@@ -73,6 +74,7 @@ export default {
         },
         {
           id: "2",
+          favorite: false,
           recipeId: "#french",
           title: "French Press",
           beanAmount: "33g",
@@ -90,6 +92,7 @@ export default {
         },
         {
           id: "3",
+          favorite: false,
           recipeId: "#kalita",
           title: "Kalita Wave",
           beanAmount: "16g",
@@ -107,6 +110,7 @@ export default {
         },
         {
           id: "4",
+          favorite: false,
           recipeId: "#infusion",
           title: "Cold Infusion",
           beanAmount: "40g",
@@ -124,6 +128,7 @@ export default {
         },
         {
           id: "5",
+          favorite: false,
           recipeId: "#chemex",
           title: "Chemex",
           beanAmount: "16g",
